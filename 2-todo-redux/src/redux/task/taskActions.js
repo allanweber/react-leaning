@@ -1,4 +1,4 @@
-import { FETCH_TASKS } from './taskTypes';
+import { FETCH_TASKS, TOGGLE_COMPLETED, ADD_TASK, REMOVE_TASK } from './taskTypes';
 
 const tasks = [
   { id: 1, name: 'task 1', completed: true },
@@ -18,9 +18,27 @@ export const fetchTasks = () => (dispatch) => {
 export const toggleCompleted = (id) => (dispatch) => {
   const task = tasks.find((todo) => todo.id === id);
   task.completed = !task.completed;
-
   dispatch({
-    type: FETCH_TASKS,
+    type: TOGGLE_COMPLETED,
+    payload: [...tasks],
+  });
+};
+
+export const addTodo = (name) => (dispatch) => {
+  const maxId = tasks.reduce((max, task) => (task.id > max ? task.id : max), tasks[0].id);
+
+  tasks.unshift({ id: maxId + 1, name: name, completed: false });
+  dispatch({
+    type: ADD_TASK,
+    payload: [...tasks],
+  });
+};
+
+export const removeTodo = (id) => (dispatch) => {
+  const task = tasks.find((task) => task.id === id);
+  tasks.splice(tasks.indexOf(task), 1);
+  dispatch({
+    type: REMOVE_TASK,
     payload: [...tasks],
   });
 };
