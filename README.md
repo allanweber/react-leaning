@@ -14,7 +14,7 @@
     "allowImportExportEverywhere": false,
     "codeFrame": false
   },
-  "extends": ["airbnb", "prettier"],
+  "extends": ["eslint:recommended", "prettier"],
   "plugins": ["react", "prettier"],
   "env": { "browser": true, "jest": true },
   "rules": {
@@ -25,7 +25,10 @@
     "react/prop-types": ["off"],
     "no-return-assign": ["off"],
     "react/prefer-stateless-function": ["off"],
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "warn",
+    "react/jsx-one-expression-per-line": ["off"],
+    "react/button-has-type": "warn"
   }
 }
 ```
