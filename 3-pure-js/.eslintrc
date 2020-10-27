@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["react", "prettier"],
+  "env": { "browser": true, "jest": true },
+  "rules": {
+    "max-len": ["error", { "code": 100 }],
+    "prefer-promise-reject-errors": ["off"],
+    "react/jsx-filename-extension": ["off"],
+    "react/jsx-closing-bracket-location": [1, "after-props"],
+    "react/prop-types": ["off"],
+    "no-return-assign": ["off"],
+    "react/prefer-stateless-function": ["off"],
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "warn",
+    "react/jsx-one-expression-per-line": ["off"],
+    "react/button-has-type": "warn",
+    "no-undef": "off"
+  }
+}
