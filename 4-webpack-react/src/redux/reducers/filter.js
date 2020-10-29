@@ -1,6 +1,6 @@
 import { SET_FILTER, SHOW_ALL } from '../actions/filter-actions';
 
-const visibilityFilter = (state = SHOW_ALL, action) => {
+const filter = (state = SHOW_ALL, action) => {
   switch (action.type) {
     case SET_FILTER:
       return action.filter;
@@ -10,4 +10,4 @@ const visibilityFilter = (state = SHOW_ALL, action) => {
   }
 };
 
-export default visibilityFilter;
+export default filter;

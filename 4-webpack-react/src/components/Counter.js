@@ -11,7 +11,7 @@ const Counter = ({ value, increment, decrement }) => (
 );
 
 const mapStateToProps = (state) => ({
-  value: state.count,
+  value: state.counter,
 });
 
 export default connect(mapStateToProps, { increment, decrement })(Counter);

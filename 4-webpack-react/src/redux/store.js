@@ -1,16 +1,16 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import counter from './reducers/counter';
-import visibilityFilter from './reducers/filter';
+import filter from './reducers/filter';
 import todos from './reducers/todos';
 
 const initialState = {};
 const middleware = [thunk];
 
 const reducers = combineReducers({
-  count: counter,
-  todos: todos,
-  filter: visibilityFilter,
+  counter,
+  todos,
+  filter,
 });
 
 const store = createStore(

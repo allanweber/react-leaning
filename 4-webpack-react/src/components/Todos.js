@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo, toggleTodo } from '../redux/actions/todos-actions';
+import Filter from './Filter';
 
 const Todos = ({ todos, addTodo, toggleTodo }) => {
   const initialState = { text: '' };
@@ -32,13 +33,16 @@ const Todos = ({ todos, addTodo, toggleTodo }) => {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      {todos.map((todo) => (
-        <div className={todo.completed ? 'line-through' : ''} key={todo.id}>
-          <span className="todo" onClick={() => clickTask(todo)}>
-            {todo.text}
-          </span>
-        </div>
-      ))}
+      <Filter />
+      <div>
+        {todos.map((todo) => (
+          <div className={todo.completed ? 'line-through' : ''} key={todo.id}>
+            <span className="todo" onClick={() => clickTask(todo)}>
+              {todo.text}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
