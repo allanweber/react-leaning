@@ -22,6 +22,4 @@ const store = createStore(
   )
 );
 
-// const store = createStore(counter);
-
 export default store;

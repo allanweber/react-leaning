@@ -11,21 +11,17 @@ import {
 
 const Filter = ({ filter, showAll, showCompleted, showNotCompleted }) => {
   return (
-    <div>
-      <div className="filters">
-        <button className={filter === SHOW_ALL ? 'active' : ''} onClick={showAll}>
-          All
-        </button>
-        <button className={filter === SHOW_COMPLETED ? 'active' : ''} onClick={showCompleted}>
-          Completed
-        </button>
-        <button
-          className={filter === SHOW_NOT_COMPLETED ? 'active' : ''}
-          onClick={showNotCompleted}>
-          Not Completed
-        </button>
-      </div>
-    </div>
+    <nav className="filters">
+      <button className={filter === SHOW_ALL ? 'active' : ''} onClick={showAll}>
+        All
+      </button>
+      <button className={filter === SHOW_COMPLETED ? 'active' : ''} onClick={showCompleted}>
+        Completed
+      </button>
+      <button className={filter === SHOW_NOT_COMPLETED ? 'active' : ''} onClick={showNotCompleted}>
+        Not Completed
+      </button>
+    </nav>
   );
 };
 
