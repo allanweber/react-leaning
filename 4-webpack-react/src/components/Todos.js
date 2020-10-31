@@ -15,8 +15,7 @@ const Todos = ({ todos, filter, addTodo, toggleTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const maxId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 1;
-    addTodo({ text: values.text, id: maxId });
+    addTodo({ text: values.text });
     setValues(initialState);
   };
 

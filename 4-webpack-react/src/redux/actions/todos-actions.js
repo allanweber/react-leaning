@@ -1,7 +1,10 @@
+import { v4 } from 'node-uuid';
+
 export const addTodo = (todo) => (dispatch) => {
   dispatch({
     type: ADD_TODO,
-    ...todo,
+    id: v4(),
+    text: todo.text,
   });
 };
 
